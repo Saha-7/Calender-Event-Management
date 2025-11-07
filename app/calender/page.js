@@ -1,10 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebaseConfig"; // Adjust path based on your folder structure
 import { useRouter } from "next/navigation";
 
 function CalendarPage() {
-  const auth = getAuth();
+  // const auth = getAuth();
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [currentDate, setCurrentDate] = useState(new Date());
