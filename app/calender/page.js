@@ -268,7 +268,7 @@ function CalendarPage() {
                   type="text"
                   value={eventTitle}
                   onChange={(e) => setEventTitle(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 text-black rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Enter event title"
                 />
               </div>
@@ -281,7 +281,7 @@ function CalendarPage() {
                   type="time"
                   value={eventTime}
                   onChange={(e) => setEventTime(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border text-black border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -292,7 +292,7 @@ function CalendarPage() {
                 <textarea
                   value={eventDescription}
                   onChange={(e) => setEventDescription(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 text-black rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Enter event description"
                   rows="3"
                 />
@@ -301,7 +301,7 @@ function CalendarPage() {
               {/* Existing events for this date */}
               {events[selectedDate] && events[selectedDate].length > 0 && (
                 <div className="border-t pt-4">
-                  <h4 className="font-semibold mb-2">Existing Events:</h4>
+                  <h4 className="font-semibold mb-2 text-black">Existing Events:</h4>
                   <div className="space-y-2 max-h-40 overflow-y-auto">
                     {events[selectedDate].map((event) => (
                       <div
@@ -309,12 +309,12 @@ function CalendarPage() {
                         className="flex justify-between items-start bg-gray-50 p-2 rounded"
                       >
                         <div className="flex-1">
-                          <div className="font-medium">{event.title}</div>
+                          <div className="font-medium text-black">{event.title}</div>
                           {event.time && (
-                            <div className="text-sm text-gray-600">{event.time}</div>
+                            <div className="text-sm text-black">{event.time}</div>
                           )}
                           {event.description && (
-                            <div className="text-sm text-gray-500">{event.description}</div>
+                            <div className="text-sm text-gray-700">{event.description}</div>
                           )}
                         </div>
                         <button
