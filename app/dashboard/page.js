@@ -12,6 +12,8 @@ function Dashboard() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        // redirect -> Calender page
+        router.push("/calender")
       } else {
         router.push("/") // redirect -> login if not logged in
       }

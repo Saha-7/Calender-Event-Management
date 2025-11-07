@@ -16,6 +16,7 @@ const Home=()=>{
     const unsubscribe = auth.onAuthStateChanged((user)=>{
       if(user){
         setUser(user)
+        router.push("/calender")
       }else{
         setUser(null)
       }
