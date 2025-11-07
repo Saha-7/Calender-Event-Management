@@ -2,13 +2,14 @@
 import { useState, useEffect } from "react";
 import {app} from "../firebaseConfig"
 import {getAuth} from "firebase/auth"
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import Dashboard from "./dashboard/page";
 
 
 const Home=()=>{
   const [user, setUser] = useState(null)
-  const router = useRouter
+  const router = useRouter()
 
   useEffect(()=>{
     const auth = getAuth(app)
@@ -38,7 +39,7 @@ const Home=()=>{
     <div className="flex flex-col items-center justify-center h-screen">
       {user? (
         // user is logged in so render the page
-        < />
+        < Dashboard/>
       ):(
         // User not logged in, render the login button
         <button
